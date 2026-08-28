@@ -4,7 +4,8 @@
 
 ## 一、最终成果
 
-先上结果，证明这套流程走得通。![WordCount词频统计结果](图片.jpg)
+先上结果，证明这套流程走得通。
+![WordCount词频统计结果](图片.jpg)
 
 **jps 进程（HDFS 集群在线）：**
 
@@ -202,7 +203,8 @@ hdfs dfs -cat /user/steve/output/part-r-00000
 
 - **现象**：明明写了 `JAVA_HOME` / `HADOOP_HOME`，`hadoop version` 还是"未找到命令"。
 - **原因**：`sudo -i` 进 root 后，`~` = `/root`，写的是 **root 的 .bashrc**；而你用命令时是 **steve 用户**，读的是 `/home/steve/.bashrc`——两边对不上。
-- **解决**：**配自己用户的软件，就在普通用户下配**，永远 `exit` 回 steve，别 `sudo -i` 改 .bashrc。![Hadoop集群进程jps](图片1.jpg)
+- **解决**：**配自己用户的软件，就在普通用户下配**，永远 `exit` 回 steve，别 `sudo -i` 改 .bashrc。
+- ![Hadoop集群进程jps](图片1.jpg)
 
 ### 坑8：命令拼错（`rm -o`、`jpsls`、`readlink` 打成 `realnk`）
 
@@ -215,7 +217,8 @@ hdfs dfs -cat /user/steve/output/part-r-00000
 - **现象**：`D:\hadoop-3.4.0.tar.gz: 未找到命令`。
 - **原因**：SSH 连的是 Linux，不认识 `D:\`。文件路径要用 MobaXterm 的 SFTP 拖拽传输，不是在终端里敲路径。
 
-### 坑10：`JAVA_HOME is not set`（最顽固，卡最久）![SSH连接成功](乱码.jpg)
+### 坑10：`JAVA_HOME is not set`（最顽固，卡最久）
+![SSH连接成功](乱码.jpg)
 
 
 
